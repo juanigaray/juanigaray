@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #e0d0a0;
+  --black: #101010;
+}
+
+html {
+  background-color: var(--black);
+}

@@ -1,0 +1,155 @@
+html {
+  background-color: black;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comparison {
+  position: relative;
+  width: 410px;
+  height: 500px;
+}
+
+.picture,
+.original-picture {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+}
+
+.original-picture {
+  opacity: 0%;
+  transition: opacity 0.5s;
+}
+
+.original-picture:hover {
+  opacity: 100%;
+}
+
+/** WALL **/
+
+/* VENECITAS */
+.venecitas {
+  display: flex;
+  flex-direction: column;
+}
+
+.venecitas > .row {
+  display: flex;
+  flex-direction: row;
+}
+
+.venecitas > .row > .venecita {
+  width: 4.5px;
+  height: 4.5px;
+  border-top: 0.5px solid #d7d8d8;
+  border-right: 0.5px solid #d7d8d8;
+}
+
+/* RAILING */
+.railing-wrapper {
+  filter: drop-shadow(-8px 14.5px 0.5px #000000a7);
+  position: absolute;
+  top: 200px;
+  left: 95px;
+}
+
+.railing {
+  transform: rotate(-32deg);
+  width: 213px;
+  height: 18px;
+  clip-path: polygon(0 0, 100% 0, 97% 100%, 0 100%);
+  background: linear-gradient(181deg, transparent, #e6b998 10%, transparent 15%),
+    linear-gradient(to right, #753a1ecc, #cb7a4355 60%),
+    linear-gradient(#ed924b, #ba4904, #da945e 80%);
+}
+
+/** STAIRS **/
+
+.stairs {
+  perspective: 400px;
+}
+
+.floor,
+.step {
+  position: absolute;
+}
+
+.step {
+  width: 71px;
+  height: 500px;
+}
+
+.floor {
+  transform: translateY(-100px) translateX(-110px) rotateX(70deg);
+}
+
+.first.step {
+  transform: translateY(-258px) translateX(236px) rotateX(70deg);
+}
+
+.second.step {
+  transform: translateY(-218px) translateX(178px) rotateX(70deg);
+}
+
+.top.step {
+  transform: translateY(-310px) translateX(290px) rotateX(70deg);
+  width: 250px;
+}
+
+.floor > .row {
+  display: flex;
+  flex-direction: row;
+}
+
+.floor > .row > .tile {
+  width: 71px;
+  height: 141px;
+}
+
+.floor > .row > .tile,
+.step {
+  background-color: #31494d;
+  border: 0.4px solid #a1b8bddd;
+}
+.floor > .row > .tile {
+  border: 0.4px solid #a1b8bddd;
+}
+
+.step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  transform-origin: right;
+}
+
+.top.step::before {
+  transform: skewY(97.1deg);
+  height: 800px;
+  width: 31px;
+  left: -31px;
+  background: #141d1f;
+}
+
+.first.step::before {
+  transform: skewY(-87.5deg);
+  height: 800px;
+  width: 8px;
+  left: -8px;
+  background: #131b1d;
+}
+
+.second.step::before {
+  transform: skewY(-87.5deg);
+  height: 800px;
+  width: 8px;
+  left: -8px;
+  background: #131b1dcc;
+}
