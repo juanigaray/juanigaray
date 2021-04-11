@@ -50,10 +50,6 @@ html {
   perspective: 800px;
 }
 
-.table:hover {
-  perspective: 0;
-}
-
 .book {
   cursor: pointer;
   position: relative;
