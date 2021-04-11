@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --scene-color-one: #f1e41a;
+  --scene-color-two: #e0bd1f;
+  --scene-color-three: #dfbc1f;
+  --scene-color-one-transparent: #f1e41a80;
+  --scene-color-two-transparent: #e0bd1f80;
+  --black: #271e01;
+  --original-width: 990px;
+  --original-height: 745px;
+  --scale: 0.8;
+  --width: calc(var(--original-width) * var(--scale));
+  --height: calc(var(--original-height) * var(--scale));
+  --grid-element-size: calc(150px * var(--scale));
+  --grid-border-width: calc(8px * var(--scale));
+  --grid-border: var(--grid-border-width) solid var(--black);
+
+  --grid-z-translation: calc(-86px * var(--scale));
+  --grid-y-translation: calc(var(--height) / -2);
+  --grid-x-translation: calc(12px * var(--scale));
+}
+
+.comparison {
+  position: relative;
+}
+
+.scene,
+.original {
+  width: var(--width);
+  height: var(--height);
+}
+
+.original {
+  position: absolute;
+  opacity: 0%;
+  transition: opacity 0.3s;
+  z-index: 2;
+}
+
+.original:hover {
+  opacity: 100%;
+}
+
+.scene {
+  overflow: hidden;
+  background: linear-gradient(
+      to left,
+      var(--scene-color-two-transparent),
+      var(--scene-color-one-transparent) 20%
+    ),
+    linear-gradient(
+      0.3turn,
+      var(--scene-color-three),
+      var(--scene-color-one) 30%
+    );
+  perspective: var(--height);
+  perspective-origin: 50% 45%;
+  display: grid;
+  justify-content: center;
+  filter: blur(0.8px);
+}
+
+.floor {
+  width: calc(var(--width) * 4);
+  height: calc(var(--height) * 1.5);
+  background: linear-gradient(transparent, var(--scene-color-two));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform: rotateX(89deg) translateY(var(--grid-y-translation))
+    translateZ(var(--grid-z-translation)) translateX(var(--grid-x-translation));
+}
+
+.grid {
+  width: fit-content;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(6, var(--grid-element-size));
+  grid-template-rows: repeat(5, var(--grid-element-size));
+  border-top: var(--grid-border);
+  border-left: var(--grid-border);
+}
+
+.grid .square {
+  border-bottom: var(--grid-border);
+  border-right: var(--grid-border);
+}
