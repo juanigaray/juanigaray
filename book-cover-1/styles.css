@@ -7,6 +7,8 @@
   --black: #101010;
   --red: #de422b;
   --sidebar-width: 94px;
+  --book-width: 448px;
+  --book-height: 630px;
 }
 
 h1,
@@ -34,31 +36,50 @@ h3 {
 }
 
 html {
-  background-color: var(--white);
+  background-color: antiquewhite;
   display: grid;
   justify-items: center;
   align-items: center;
   height: 100vh;
   font-family: "Vollkorn", serif;
   color: var(--black);
-  perspective: 9000px;
-  perspective-origin: -60% 303%;
+}
+
+.table {
+  position: relative;
+  perspective: 800px;
+}
+
+.table:hover {
+  perspective: 0;
 }
 
 .book {
+  cursor: pointer;
   position: relative;
-  width: 448px;
-  height: 630px;
+  width: var(--book-width);
+  height: var(--book-height);
+  transform: translateZ(-400px) rotateY(20deg) rotateX(45deg);
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.book:hover {
+  transform: none;
 }
 
 .cover {
-  position: absolute;
   display: flex;
-  width: 448px;
-  height: 630px;
+  width: var(--book-width);
+  height: var(--book-height);
   display: flex;
   flex-direction: row;
   overflow: hidden;
+}
+
+.cover,
+.side {
+  position: absolute;
 }
 
 .cover .sidebar {
@@ -100,22 +121,20 @@ footer .copyright {
   font-size: 15px;
 }
 
-.left-side {
-  position: absolute;
+.left.side {
+  left: 0;
   background-color: black;
   width: 100px;
-  height: 630px;
+  height: var(--book-height);
   transform: rotateY(-90deg) translateZ(50px) translateX(-50px);
-  left: 0;
 }
 
-.bottom-side {
-  position: absolute;
+.bottom.side {
+  left: 0;
   background-color: #8b8570;
-  width: 448px;
+  width: var(--book-width);
   height: 100px;
   transform-origin: top;
   transform: rotateX(-90deg);
-  left: 0;
-  top: 630px;
+  top: var(--book-height);
 }

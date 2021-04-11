@@ -42,28 +42,26 @@
                 const TOTAL_ROWS = 76;
                 const TOTAL_COLS = 90;
                 const colors = [
-                    "#2f9168",
-                    "#9eedd7",
-                    "#46bcb0",
-                    "#54baa2",
-                    "#2cdcd2",
-                    "#31c2bd",
-                    "#2c8776",
-                    "#45beaf",
-
+                    "c1", "c2", "c3", "c4",
+                    "c2", "c3", "c4",
+                    "c5", "c5", "c6",
                 ];
+
                 const getRandomArrayIndex = arr => Math.floor(Math.random() * arr.length)
                 const getRandomColor = () => colors[getRandomArrayIndex(colors)];
                 const times = (times, hydrator) =>
                     Array(times).fill(null).map(hydrator);
+
                 const venecitas = times(TOTAL_ROWS, () =>
                     times(TOTAL_COLS, getRandomColor)
                 );
                 const getHtmlRow = row => {
                     return `
                 <div class="row">
-                    ${row.map((c) => (
-                        `<div class="venecita" style=${`"background-color: ${c};"`}></div>`
+                    ${row.map((color) => (
+                        `<div
+                            class="venecita ${color}"
+                         ></div>`
                     )).join("")}
                 </div>
                 `

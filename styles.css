@@ -10,3 +10,8 @@
 html {
   background-color: var(--black);
 }
+
+ul.links {
+  list-style: none;
+  display: grid;
+}

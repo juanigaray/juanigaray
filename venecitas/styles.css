@@ -1,3 +1,31 @@
+:root {
+  --color-1: #29acac;
+  --color-2: #37a8a2;
+  --color-3: #32a89e;
+  --color-4: #38c0ca;
+  --color-5: #10d6b5;
+  --color-6: #68d3c5;
+}
+
+.c1 {
+  background-color: var(--color-1);
+}
+.c2 {
+  background-color: var(--color-2);
+}
+.c3 {
+  background-color: var(--color-3);
+}
+.c4 {
+  background-color: var(--color-4);
+}
+.c5 {
+  background-color: var(--color-5);
+}
+.c6 {
+  background-color: var(--color-6);
+}
+
 html {
   background-color: black;
 }
@@ -46,9 +74,10 @@ body {
   flex-direction: row;
 }
 
-.venecitas > .row > .venecita {
-  width: 4.5px;
-  height: 4.5px;
+.venecita {
+  box-sizing: border-box;
+  width: 5px;
+  height: 5px;
   border-top: 0.5px solid #d7d8d8;
   border-right: 0.5px solid #d7d8d8;
 }
