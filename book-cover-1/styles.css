@@ -4,11 +4,19 @@
 
 :root {
   --white: #e0d0a0;
-  --black: #101010;
+  --table-background-color: black;
+  --front-side-black: #1f1f1f;
+  --left-side-black: #131313;
   --red: #de422b;
+  --yellow: #e6e654;
+  --green: #4bc44b;
   --sidebar-width: 94px;
   --book-width: 448px;
   --book-height: 630px;
+}
+
+body {
+  padding: 0;
 }
 
 h1,
@@ -36,21 +44,28 @@ h3 {
 }
 
 html {
-  background-color: antiquewhite;
-  display: grid;
-  justify-items: center;
-  align-items: center;
+  background-color: white;
   height: 100vh;
   font-family: "Vollkorn", serif;
-  color: var(--black);
+  color: var(--front-side-black);
 }
 
 .table {
-  position: relative;
+  transform: scale(0.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: var(--table-background-color);
+}
+
+.book-container {
   perspective: 800px;
+  min-width: calc(var(--book-width) * 1);
 }
 
 .book {
+  display: block;
+  text-decoration: none;
   cursor: pointer;
   position: relative;
   width: var(--book-width);
@@ -60,8 +75,10 @@ html {
   transition: transform 1s;
 }
 
-.book:hover {
+.book:hover,
+.book:focus {
   transform: none;
+  outline: none;
 }
 
 .cover {
@@ -80,7 +97,7 @@ html {
 
 .cover .sidebar {
   height: 100%;
-  background-color: var(--black);
+  background-color: var(--front-side-black);
   width: var(--sidebar-width);
 }
 
@@ -93,7 +110,6 @@ html {
 }
 
 .content {
-  background-color: var(--red);
   width: 100%;
   padding: 20px;
   overflow: hidden;
@@ -103,11 +119,6 @@ html {
   margin-bottom: 20px;
 }
 
-.content .curve {
-  margin-left: -100px;
-  width: 100vw;
-}
-
 footer .copyright {
   position: absolute;
   bottom: 0;
@@ -115,8 +126,16 @@ footer .copyright {
 }
 
 .left.side {
+  background-color: var(--left-side-black);
   left: 0;
-  background-color: black;
+  width: 100px;
+  height: var(--book-height);
+  transform: rotateY(-90deg) translateZ(50px) translateX(-50px);
+}
+
+.right.side {
+  background-color: #8b8570;
+  left: var(--book-width);
   width: 100px;
   height: var(--book-height);
   transform: rotateY(-90deg) translateZ(50px) translateX(-50px);
@@ -130,4 +149,23 @@ footer .copyright {
   transform-origin: top;
   transform: rotateX(-90deg);
   top: var(--book-height);
+}
+
+/* Book-specific styles */
+
+.book.one .content {
+  background-color: var(--red);
+}
+
+.book.one .content .curve {
+  margin-left: -100px;
+  width: 100vw;
+}
+
+.book.two .content {
+  background-color: var(--yellow);
+}
+
+.book.three .content {
+  background-color: var(--green);
 }
