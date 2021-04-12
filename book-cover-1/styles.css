@@ -87,12 +87,9 @@ html {
 .sidebar .text {
   padding: 0;
   margin: 0;
-
   line-height: var(--sidebar-width);
   color: var(--white);
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  letter-spacing: 15px;
+  text-align: center;
 }
 
 .content {
