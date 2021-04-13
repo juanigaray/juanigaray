@@ -7,105 +7,128 @@
     <link rel="icon" type="image/png" href="../favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
-    <title>Book cover</title>
+    <title>CSS book covers</title>
 </head>
 
 <body>
-    <div class="table">
+    <article class="my-books">
+        <header>
+            <h1>
+                CSS book covers
+            </h1>
+        </header>
+        <section class="description">
+            <p>
+                This project was originally intended to be a simple book cover, but as I went on I decided, why not add
+                a little 3D into the mix? So I turned my book a few degrees around a couple axes.
+            </p>
+            <p>
+                But then I realised
+                that I could apply transitions to 3D transformations, so I did. Only... now the book looked so much
+                like something out of a bookstore's e-commerce page that I simply couldn't leave it alone, so I put two
+                other books beside it, changed their styles up a bit and put them all in a black box.
+            </p>
 
-        <div class="book-container">
-
-            <article tabindex="0" class="book one">
-                <div class="left side"></div>
-                <div class="bottom side"></div>
-                <article class="cover">
-                    <header class="sidebar">
-                        <h1 class="text">
-                            L
-                        </h1>
-                    </header>
-                    <section class="content">
-                        <header class="book-title">
-                            <h2>Lorem ipsum</h2>
-                            <h3>Dolor sit amet consectetur adipisicing elit. Deleniti a, eius expedita exercitationem.
-                            </h3>
+            <p>
+                Play around with the devtools if you want! This page has zero javascript.
+            </p>
+        </section>
+        <section class="table">
+            <div class="book-container">
+                <article tabindex="0" class="book one">
+                    <div class="left side"></div>
+                    <div class="bottom side"></div>
+                    <article class="cover">
+                        <header class="sidebar">
+                            <h1 class="text">
+                                L
+                            </h1>
                         </header>
+                        <section class="content">
+                            <header class="book-title">
+                                <h2>Lorem ipsum</h2>
+                                <h3>Dolor sit amet consectetur adipisicing elit. Deleniti a, eius expedita
+                                    exercitationem.
+                                </h3>
+                            </header>
 
-                        <svg class="curve" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="none" stroke="var(--front-side-black)" stroke-width="3px" d="
-                    M 10,50
-                    Q 25,25 40,50
-                    t 30,0 30,0 30,0 30,0 30,0" />
-                        </svg>
+                            <svg class="curve" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="none" stroke="var(--front-side-black)" stroke-width="3px" d="
+                            M 10,50
+                            Q 25,25 40,50
+                            t 30,0 30,0 30,0 30,0 30,0" />
+                            </svg>
 
-                        <footer>
-                            <p class="copyright">
-                                &#xa9 2021 itaque ullam eum, dolorum quisquam.
-                            </p>
-                        </footer>
-                    </section>
+                            <footer>
+                                <p class="copyright">
+                                    &#xa9 2021 itaque ullam eum, dolorum quisquam.
+                                </p>
+                            </footer>
+                        </section>
+                    </article>
+                    <div class="right side"></div>
                 </article>
-                <div class="right side"></div>
-            </article>
-        </div>
-
-        <div class="book-container">
-
-            <article tabindex="0" class="book two">
-                <div class="left side"></div>
-                <div class="bottom side"></div>
-                <article class="cover">
-                    <header class="sidebar">
-                        <h1 class="text">
-                            L
-                        </h1>
-                    </header>
-                    <section class="content">
-                        <header class="book-title">
-                            <h2>Lorem ipsum</h2>
-                            <h3>Dolor sit amet consectetur adipisicing elit. Deleniti a, eius expedita exercitationem.
-                            </h3>
+            </div>
+            <div class="book-container">
+                <article tabindex="0" class="book two">
+                    <div class="left side"></div>
+                    <div class="bottom side"></div>
+                    <article class="cover">
+                        <header class="sidebar">
+                            <h1 class="text">
+                                P
+                            </h1>
                         </header>
+                        <section class="content">
+                            <header class="book-title">
+                                <h2>Provident similique</h2>
+                                <h3>Amet consectetur adipisicing elit. Nisi cum
+                                    veritatis sequi molestias.
+                                </h3>
+                            </header>
 
-                        <footer>
-                            <p class="copyright">
-                                &#xa9 2021 itaque ullam eum, dolorum quisquam.
-                            </p>
-                        </footer>
-                    </section>
+                            <footer>
+                                <p class="copyright">
+                                    &#xa9 2021 itaque ullam eum, dolorum quisquam.
+                                </p>
+                            </footer>
+                        </section>
+                    </article>
+                    <div class="right side"></div>
                 </article>
-                <div class="right side"></div>
-            </article>
-        </div>
-
-        <div class="book-container">
-
-            <article tabindex="0" class="book three">
-                <div class="left side"></div>
-                <div class="bottom side"></div>
-                <article class="cover">
-                    <header class="sidebar">
-                        <h1 class="text">
-                            L
-                        </h1>
-                    </header>
-                    <section class="content">
-                        <header class="book-title">
-                            <h2>Lorem ipsum</h2>
-                            <h3>Dolor sit amet consectetur adipisicing elit. Deleniti a, eius expedita exercitationem.
-                            </h3>
+            </div>
+            <div class="book-container">
+                <article tabindex="0" class="book three">
+                    <div class="left side"></div>
+                    <div class="bottom side"></div>
+                    <article class="cover">
+                        <header class="sidebar">
+                            <h1 class="text">
+                                V
+                            </h1>
                         </header>
-                        <footer>
-                            <p class="copyright">
-                                &#xa9 2021 itaque ullam eum, dolorum quisquam.
-                            </p>
-                        </footer>
-                    </section>
+                        <section class="content">
+                            <header class="book-title">
+                                <h2>Voluptatem sed vitae</h2>
+                                <h3>Asperiores assumenda sit consectetur elit. Eius expedita exercitationem.
+                                </h3>
+                            </header>
+                            <footer>
+                                <p class="copyright">
+                                    &#xa9 2021 itaque ullam eum, dolorum quisquam.
+                                </p>
+                            </footer>
+                        </section>
+                    </article>
+                    <div class="right side"></div>
                 </article>
-                <div class="right side"></div>
-            </article>
-        </div>
-    </div>
+            </div>
+        </section>
+
+        <p>
+            This is a playground more than a finished page, so expect things to change in the future.
+        </p>
+    </article>
 </body>
 
 </html>

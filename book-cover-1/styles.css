@@ -3,7 +3,8 @@
 }
 
 :root {
-  --white: #e0d0a0;
+  --background-white: #eee3c3;
+  --book-sidebar-white: #e0d0a0;
   --table-background-color: black;
   --front-side-black: #1f1f1f;
   --left-side-black: #131313;
@@ -15,8 +16,15 @@
   --book-height: 630px;
 }
 
+html {
+  background-color: var(--background-white);
+  font-family: "Vollkorn", serif;
+  color: var(--front-side-black);
+}
+
 body {
   padding: 0;
+  margin: 0;
 }
 
 h1,
@@ -43,24 +51,30 @@ h3 {
   font-weight: normal;
 }
 
-html {
-  background-color: white;
-  height: 100vh;
-  font-family: "Vollkorn", serif;
-  color: var(--front-side-black);
+article.my-books {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 10vw;
+  padding-right: 10vw;
 }
 
 .table {
-  transform: scale(0.5);
+  --scale: 0.6;
+
+  width: fit-content;
+  transform: scale(0.6) translateY(-20%);
   display: flex;
   flex-direction: row;
-  justify-content: center;
   background-color: var(--table-background-color);
+  padding: calc(var(--book-width) * 0.1);
+  gap: calc(var(--book-width) * 0.1);
 }
 
 .book-container {
   perspective: 800px;
-  min-width: calc(var(--book-width) * 1);
+  min-width: var(--book-width);
 }
 
 .book {
@@ -105,7 +119,7 @@ html {
   padding: 0;
   margin: 0;
   line-height: var(--sidebar-width);
-  color: var(--white);
+  color: var(--book-sidebar-white);
   text-align: center;
 }
 
