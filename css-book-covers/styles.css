@@ -1,3 +1,7 @@
+/* I started learning about CSS 3d transformations the day before I made this.
+ * I think this code is tidy and readable, but if you think I could improve it, issues are welcome on Github!
+ */
+
 * {
   box-sizing: border-box;
 }
@@ -8,6 +12,7 @@
   --table-background-color: black;
   --front-side-black: #1f1f1f;
   --left-side-black: #131313;
+  --paper-side-color: #8b8570;
   --red: #de422b;
   --yellow: #e6e654;
   --green: #4bc44b;
@@ -147,8 +152,12 @@ footer .copyright {
   transform: rotateY(-90deg) translateZ(50px) translateX(-50px);
 }
 
+.right.side,
+.bottom.side {
+  background-color: var(--paper-side-color);
+}
+
 .right.side {
-  background-color: #8b8570;
   left: var(--book-width);
   width: 100px;
   height: var(--book-height);
@@ -157,12 +166,11 @@ footer .copyright {
 
 .bottom.side {
   left: 0;
-  background-color: #8b8570;
+  top: var(--book-height);
   width: var(--book-width);
   height: 100px;
   transform-origin: top;
   transform: rotateX(-90deg);
-  top: var(--book-height);
 }
 
 /* Book-specific styles */
