@@ -23,6 +23,18 @@
   --grid-x-translation: calc(12px * var(--scale));
 }
 
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e9e9c7;
+}
+
 .comparison {
   position: relative;
 }
@@ -88,4 +100,41 @@
 .grid .square {
   border-bottom: var(--grid-border);
   border-right: var(--grid-border);
+}
+
+/* Article */
+
+article.gelb {
+  padding-left: 10vw;
+  padding-right: 10vw;
+  padding-bottom: 5vw;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+h2 {
+  font-size: 40px;
+}
+h1 {
+  margin-top: 0;
+  font-size: 70px;
+  margin-bottom: 30px;
+}
+
+.description {
+  margin-bottom: 30px;
+}
+
+.comparison {
+  align-self: center;
+}
+
+a,
+a:visited {
+  color: #625a93;
 }
