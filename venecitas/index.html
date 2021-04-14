@@ -9,69 +9,98 @@
 </head>
 
 <body>
-    <article class="comparison">
+    <article class="about-venecitas">
+        <h1>
+            Venecitas
+        </h1>
+        <section class="description">
+            <p>
+                One day I was browsing Twitter very unmerrily (as one does) when I came across <a
+                    href="https://twitter.com/cremetoursBA/status/1380134261001490435"
+                    title="Tweet about the picture I was inspired by">this tweet</a>. It caught my attention how it
+                described something so ordinary to me as peculiar to a certain particular artistic movement. So I looked
+                at the picture and two things happened. My first thought was how much beauty there must be around us
+                which is lost on us as it becomes no more than background noise in our day to day lives.
+            </p>
+            <p>
 
-        <section class="picture">
-            <div class="wall">
-                <div class="venecitas" id="venecitas">
-                </div>
-                <div class="railing-wrapper">
-                    <div class="railing"></div>
-                </div>
-            </div>
-            <div class="stairs">
-                <div class="floor">
-                    <div class="row">
-                        <div class="tile"></div>
-                        <div class="tile"></div>
-                        <div class="tile"></div>
-                        <div class="tile"></div>
+                My second thought was "I could probably CSS that".
+            </p>
+            <p> This was my first experiment with 3D CSS transformations, so I'll probably come to revisit this code
+                later and tidy it up here and there. The <i>feel</i> of the wall behind isn't quite right, and the
+                stairs aren't in the right height, but I'm very proud of that handle.
+
+                I'm afraid there's also a little javascript here doing some heavy lifting, as I couldn't figure out how
+                to generate a bazillion tiles with a random distribution of colours.
+            </p>
+
+            <p>
+                Hover your cursor over the image to see the comparison with the original picture!
+            </p>
+        </section>
+        <article class="comparison">
+            <section class="picture">
+                <div class="wall">
+                    <div class="venecitas" id="venecitas">
                     </div>
-                    <div class="row">
-                        <div class="tile"></div>
-                        <div class="tile"></div>
-                        <div class="tile"></div>
-                        <div class="tile"></div>
+                    <div class="railing-wrapper">
+                        <div class="railing"></div>
                     </div>
                 </div>
-                <div class="second step"></div>
-                <div class="first step"></div>
-                <div class="top step"></div>
-            </div>
-            <script>
-                const TOTAL_ROWS = 76;
-                const TOTAL_COLS = 90;
-                const colors = [
-                    "c1", "c2", "c3", "c4",
-                    "c2", "c3", "c4",
-                    "c5", "c5", "c6",
-                ];
+                <div class="stairs">
+                    <div class="floor">
+                        <div class="row">
+                            <div class="tile"></div>
+                            <div class="tile"></div>
+                            <div class="tile"></div>
+                            <div class="tile"></div>
+                        </div>
+                        <div class="row">
+                            <div class="tile"></div>
+                            <div class="tile"></div>
+                            <div class="tile"></div>
+                            <div class="tile"></div>
+                        </div>
+                    </div>
+                    <div class="second step"></div>
+                    <div class="first step"></div>
+                    <div class="top step"></div>
+                </div>
+                <script>
+                    const TOTAL_ROWS = 76;
+                    const TOTAL_COLS = 90;
+                    const colors = [
+                        "c1", "c2", "c3", "c4",
+                        "c2", "c3", "c4",
+                        "c5", "c5", "c6",
+                    ];
 
-                const getRandomArrayIndex = arr => Math.floor(Math.random() * arr.length)
-                const getRandomColor = () => colors[getRandomArrayIndex(colors)];
-                const times = (times, hydrator) =>
-                    Array(times).fill(null).map(hydrator);
+                    const getRandomArrayIndex = arr => Math.floor(Math.random() * arr.length)
+                    const getRandomColor = () => colors[getRandomArrayIndex(colors)];
+                    const times = (times, hydrator) =>
+                        Array(times).fill(null).map(hydrator);
 
-                const venecitas = times(TOTAL_ROWS, () =>
-                    times(TOTAL_COLS, getRandomColor)
-                );
-                const getHtmlRow = row => {
-                    return `
+                    const venecitas = times(TOTAL_ROWS, () =>
+                        times(TOTAL_COLS, getRandomColor)
+                    );
+                    const getHtmlRow = row => {
+                        return `
                 <div class="row">
                     ${row.map((color) => (
-                        `<div
+                            `<div
                             class="venecita ${color}"
                          ></div>`
-                    )).join("")}
+                        )).join("")}
                 </div>
                 `
-                }
-                const venecitasElement = document.getElementById("venecitas");
-                venecitasElement.innerHTML = venecitas.map(getHtmlRow).join("");
-            </script>
-        </section>
-        <img class="original-picture" src="venecitas.jpeg" />
+                    }
+                    const venecitasElement = document.getElementById("venecitas");
+                    venecitasElement.innerHTML = venecitas.map(getHtmlRow).join("");
+                </script>
+            </section>
+            <img class="original-picture" src="venecitas.jpeg" />
 
+        </article>
     </article>
 </body>
 
