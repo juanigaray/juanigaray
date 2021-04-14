@@ -42,7 +42,7 @@ h5 {
 }
 
 h1 {
-  font-size: calc(var(--sidebar-width) * 0.8);
+  font-size: 75px;
   font-weight: normal;
 }
 

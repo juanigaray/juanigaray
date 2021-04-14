@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: #7bb9b9;
+  --book-sidebar-white: #e0d0a0;
+}
+
+html {
+  font-family: "MS Sans Serif";
+  background-color: var(--background-color);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  font-size: 60px;
+  font-weight: normal;
+}
+
+p {
+  font-size: 17px;
+}
+
+article.about-my-minesweeper-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.minesweeper-app {
+  width: 500px;
+  height: 500px;
+}
