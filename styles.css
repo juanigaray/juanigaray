@@ -4,7 +4,7 @@
 
 :root {
   /* Colors */
-  --white: #e4d4a5;
+  --white: #e6dbbb;
   --black: #101010;
   --red: #ca463d;
   /* Dimensions */
@@ -21,11 +21,21 @@
 html {
   background-color: var(--black);
   font-family: "Breite Grotesk Regular";
+  display: flex;
 }
 
 body {
   padding: 0;
   margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+article > h1  {
+  font-size: var(--one);
+  color: var(--white);
+  padding-left: 1em; 
 }
 
 ul.links {
