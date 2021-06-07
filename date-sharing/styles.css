@@ -1,4 +1,38 @@
 * {
   box-sizing: border-box;
 }
- 
+
+body {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  background-color: #e9d6ee;
+  font-family: "Roboto Mono", monospace;
+}
+
+#date-input {
+  border: 1px solid black;
+  border-radius: 0;
+  padding: 8px;
+  font-family: "Roboto Mono", monospace;
+  box-sizing: border-box;
+}
+
+#select-date-button {
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  background-color: #6262e6;
+  height: 36px;
+  font-weight: 500;
+  font-family: "Roboto Mono", monospace;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+#select-date-button:focus,
+#date-input:focus {
+  outline: 2px solid black;
+}

@@ -4,13 +4,27 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="../favicon.ico" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Date sharing</title>
   </head>
 
   <body>
-    <p id="parsed-url-date"></p>
-    <input type="datetime-local" id="date-input" />
-    <button onclick="goToSelectedDateUrl()">Go to selected date URL</button>
+    <section class="shared-date">
+      <h1 id="parsed-url-date-title"></h1>
+      <p id="parsed-url-date"></p>
+    </section>
+    <section class="date-selection">
+      <h1>Share a date:</h1>
+      <!-- Form to allow input on enter -->
+      <form>
+        <input type="datetime-local" id="date-input" />
+        <button id="select-date-button">GENERATE DATE URL</button>
+      </form>
+    </section>
     <script type="text/javascript" src="./index.js"></script>
   </body>
 </html>

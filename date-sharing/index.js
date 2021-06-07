@@ -1,6 +1,7 @@
 const DATE_ID = "date-input";
 const PARSED_DATE_ID = "parsed-url-date";
-
+const SELECT_DATE_BUTTON_ID = "select-date-button";
+const PARSED_DATE_TITLE_ID = "parsed-url-date-title";
 /**
  *
  * @param {string} url
@@ -54,7 +55,18 @@ const setUrlDateParagraph = () => {
   if (parsedUrlDate) {
     const pElement = document.getElementById(PARSED_DATE_ID);
     if (pElement) pElement.innerText = parsedUrlDate.toString();
+    const hElement = document.getElementById(PARSED_DATE_TITLE_ID);
+    if (hElement) hElement.innerText = "Date shared:";
   }
 };
 
+// Main
 setUrlDateParagraph();
+document.getElementById(SELECT_DATE_BUTTON_ID).addEventListener(
+  "click",
+  (e) => {
+    e.preventDefault();
+    goToSelectedDateUrl();
+  },
+  false
+);
