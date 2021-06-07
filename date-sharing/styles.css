@@ -5,15 +5,22 @@
 body {
   display: flex;
   flex-direction: column;
-  padding: 5rem;
+  padding: 4rem;
   background-color: #e9d6ee;
   font-family: "Roboto Mono", monospace;
+}
+
+#date-input,
+#select-date-button {
+  font-size: 30px;
+  height: 80px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 #date-input {
   border: 1px solid black;
   border-radius: 0;
-  padding: 8px;
   font-family: "Roboto Mono", monospace;
   box-sizing: border-box;
 }
@@ -25,7 +32,6 @@ body {
   display: inline-block;
   color: white;
   background-color: #6262e6;
-  height: 36px;
   font-weight: 500;
   font-family: "Roboto Mono", monospace;
   box-sizing: border-box;
@@ -35,4 +41,19 @@ body {
 #select-date-button:focus,
 #date-input:focus {
   outline: 2px solid black;
+}
+
+p {
+  font-size: 30px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.date-form {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 1rem;
 }
