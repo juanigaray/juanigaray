@@ -2,6 +2,7 @@
 <html lang="es-AR">
   <head>
     <meta charset="UTF-8" />
+    <meta name="theme-color" content="#e9d6ee" />
     <link rel="icon" type="image/png" href="../favicon.ico" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -18,13 +19,37 @@
       <p id="parsed-url-date"></p>
     </section>
     <section class="date-selection">
-      <h1>Share a date:</h1>
+      <h1>Share a date</h1>
+      <p>
+        This will take you to a new URL which you can copy and share. Everyone
+        will see the date in their own timezone.
+      </p>
       <!-- Form to allow input on enter -->
       <form class="date-form">
         <input type="datetime-local" id="date-input" />
         <button id="select-date-button">GENERATE DATE URL</button>
       </form>
     </section>
+    <details class="description">
+      <summary>STOP DOING TIMEZONE CONVERSIONS</summary>
+      <ul>
+        <li>HOURS WERE NOT SUPPOSED TO BE GIVEN DISTANCES</li>
+        <li>YEARS COUNTING TIME yet NO REAL-WORLD USE FOUND for UTC OFFSETS</li>
+        <li>
+          Wanted to know what time it was in another city anyway for a laugh? We
+          had a tool for that: it was called "TRAVELLING"
+        </li>
+        <li>
+          "Remember to subtract the <b>daylight savings</b>. Let's meet at 18:30
+          <b>GMT-03</b>" - Statements dreamed up by the utterly Deranged
+        </li>
+      </ul>
+      <b>They have played us for absolute fools.</b>
+      <p>
+        No, but really, sharing dates across timezones is a mess and online
+        converters have Too Many Features, so I made this.
+      </p>
+    </details>
     <script type="text/javascript" src="./index.js"></script>
   </body>
 </html>

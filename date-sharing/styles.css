@@ -3,9 +3,11 @@
 }
 
 body {
+  margin: 0;
   display: flex;
   flex-direction: column;
-  padding: 4rem;
+  padding: 3rem;
+  padding-top: 0;
   background-color: #e9d6ee;
   font-family: "Roboto Mono", monospace;
 }
@@ -13,6 +15,7 @@ body {
 #date-input,
 #select-date-button {
   font-size: 30px;
+  width: 550px;
   height: 80px;
   padding-left: 30px;
   padding-right: 30px;
@@ -52,8 +55,9 @@ h1 {
 }
 
 .date-form {
-  width: fit-content;
+  width: min-content;
   display: grid;
   grid-template-columns: 1fr;
   grid-row-gap: 1rem;
+  margin-bottom: 2rem;
 }
