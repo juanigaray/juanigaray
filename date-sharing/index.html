@@ -19,16 +19,30 @@
       <p id="parsed-url-date"></p>
     </section>
     <section class="date-selection">
-      <h1>Share a date</h1>
+      <h1>How to use this page-app</h1>
       <p>
-        This will take you to a new URL which you can copy and share. Everyone
-        will see the date in their own timezone.
+        Ever want to share a date with someone else who's in a different
+        timezone? Oh, let's meet friday at, uh, 10 PM GMT! That is
+        <strong> very annoying</strong>.
+      </p>
+      <p>
+        There are tools to solve this out there but they tend to do too many
+        things and they're uglier than this website.
+      </p>
+      <p>
+        This page does one thing. It asks for a date in YOUR timezone and gives
+        you a URL that you can send to people. When someone enters that URL,
+        this page will detect where their browser is and show them the date
+        converted to that timezone.
       </p>
       <!-- Form to allow input on enter -->
-      <form class="date-form">
-        <input type="datetime-local" id="date-input" />
-        <button id="select-date-button">GENERATE DATE URL</button>
-      </form>
+      <section>
+        <h1>Enter the date you want to share</h1>
+        <form class="date-form">
+          <input type="datetime-local" id="date-input" />
+          <button id="select-date-button">GENERATE DATE URL</button>
+        </form>
+      </section>
     </section>
     <details class="description">
       <summary>STOP DOING TIMEZONE CONVERSIONS</summary>
@@ -45,10 +59,6 @@
         </li>
       </ul>
       <b>They have played us for absolute fools.</b>
-      <p>
-        No, but really, sharing dates across timezones is a mess and online
-        converters have Too Many Features, so I made this.
-      </p>
     </details>
     <script type="text/javascript" src="./index.js"></script>
   </body>

@@ -39,7 +39,7 @@ const goToSelectedDateUrl = () => {
 const parseUrlDate = () => {
   const urlParams = new URLSearchParams(window.location.search);
   const urlDate = urlParams.get("date");
-  if (urlDate === "") return undefined;
+  if (urlDate === "" || urlDate === null) return undefined;
   const urlDateNum = +urlDate;
   if (isNaN(urlDateNum) || urlDateNum === 0) return undefined;
   const date = new Date();
@@ -56,12 +56,13 @@ const setUrlDateParagraph = () => {
     const pElement = document.getElementById(PARSED_DATE_ID);
     if (pElement) pElement.innerText = parsedUrlDate.toString();
     const hElement = document.getElementById(PARSED_DATE_TITLE_ID);
-    if (hElement) hElement.innerText = "Date shared:";
+    if (hElement) hElement.innerText = "The date in question is:";
   }
 };
 
 // Main
 setUrlDateParagraph();
+// @ts-ignore
 document.getElementById(SELECT_DATE_BUTTON_ID).addEventListener(
   "click",
   (e) => {
