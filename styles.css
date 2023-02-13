@@ -7,11 +7,12 @@
   --white: #e6dbbb;
   --black: #101010;
   --red: #ca463d;
+  --active-red: #db544b;
   /* Dimensions */
   --item-size: 300px;
   --item-margin: 50px;
-  --item-shadow-displacement-left: calc(var(--item-margin) / -3);
-  --item-shadow-displacement-bottom: calc(var(--item-margin) / 3);
+  --item-shadow-displacement-small: calc(var(--item-margin) / 4.5);
+  --item-shadow-displacement-large: calc(var(--item-margin) / 3);
 
   /* Font sizes */
   --one: 3.052rem;
@@ -32,10 +33,10 @@ body {
   flex-direction: column;
 }
 
-article > h1  {
+article > h1 {
   font-size: var(--one);
   color: var(--white);
-  padding-left: 1em; 
+  padding-left: 1em;
 }
 
 ul.links {
@@ -60,15 +61,25 @@ ul.links {
   margin-bottom: var(--item-margin);
   text-align: center;
   box-shadow: 0 0 0 var(--white);
-  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, background-color 0.3s;
 }
 
 .links > li:hover {
-  box-shadow: var(--item-shadow-displacement-left)
-    var(--item-shadow-displacement-bottom) 0 var(--white);
+  box-shadow: calc(-1 * var(--item-shadow-displacement-small))
+    var(--item-shadow-displacement-small) 0 var(--white);
+}
+
+.links > li:focus-within {
+  box-shadow: calc(-1 * var(--item-shadow-displacement-large))
+    var(--item-shadow-displacement-large) 0 var(--white);
+}
+
+.links > li:has(a:active) {
+  background-color: var(--active-red);
 }
 
 .links > li > a {
+  outline: none;
   text-decoration: none;
   display: flex;
   justify-content: center;

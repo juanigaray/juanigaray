@@ -65,6 +65,11 @@ article.my-books {
   padding-right: 10vw;
 }
 
+.my-books header {
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+}
+
 .table {
   --scale: 0.6;
 
