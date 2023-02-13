@@ -52,7 +52,8 @@ body {
   z-index: 2;
 }
 
-.original:hover {
+.comparison:hover .original,
+.comparison:focus .original {
   opacity: 100%;
 }
 
