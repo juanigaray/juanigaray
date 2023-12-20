@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;   
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: medium;
+}
+
+body {
+    padding: 64px;
+    background: #101010;
+    --matrixy-green: #25ff35;
+    color: var(--matrixy-green);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+header {
+    text-align: end;
+}
+
+/* I want to keep the upper and lower perceived paddings consistent and h1 elements have far too much upper margin for that*/
+header > h1 {
+    margin-top: 0;
+}
+
+header, .professional-profile, .work-experience, .known-technologies, .known-languages, .more-about-me {
+    border: 1px solid var(--matrixy-green);
+    outline: 1px solid white;
+    padding: 16px 64px;
+}
+
+.ref-to-98-css {
+    font-family: "Pixelated MS Sans Serif",Arial;
+}
