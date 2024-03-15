@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="../favicon.ico" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.1/lib/p5.js"></script>
+    <script src="sketch.js"></script>
+    <title>Hexagons</title>
+  </head>
+
+  <body>
+    <article class="hexagons">
+      <header>
+        <h2>A party trick:</h2>
+        <h1>The Hex Map</h1>
+      </header>
+      <section class="description">
+        <p>
+          During the brief-ish sabbatical that I started in 2023 (and which will
+          hopefully end during early 2024), one night I was at a party
+          where I knew very few people. Grabbing some ice, I started chatting
+          with a guy I'd had a small interaction with before.
+        </p>
+        <section class="dialogue">
+          <p class="dialogue-line">"So, what do you do for a living?"</p>
+          <p class="dialogue-line">"I'm a game developer!"</p>
+        </section>
+        <p>
+          About twenty minutes later, me and this guy were holding board markers
+          and drawing hexagons on the wall while more and more curious people
+          gathered around asking what on Earth we were talking about. We were
+          talking about hexagons!
+        </p>
+        <section>
+          The concept was simple:
+          <ul>
+            <li>There is a map made up of hexagons</li>
+            <li>
+              Each hexagon has an intrinsic quality (let's call it its
+              'element')
+            </li>
+            <li>
+              Each side that's shared by two hexagons has a property (let's call
+              it its 'powerup') that's the product of the qualities of the two
+              hexagons that are touching
+            </li>
+          </ul>
+
+          <section class="dialogue">
+            <p class="dialogue-line">
+              "I'm thinking of building each hexagon as an object with six
+              individual sides, and then figure out how to assign hexagons to
+              sides. I don't know."
+            </p>
+            <p class="dialogue-line">
+              "Wait, no, I think... have you tried representing it as an array?
+              This should follow a few simple rules and save you a lot of
+              trouble"
+            </p>
+          </section>
+
+          In the end, we came up with a simple algorithm that both
+          <ul>
+            <li>Represents the hexagon map in a simple data structure</li>
+            <li>
+              Is able to easily determine which other hexagons a hexagon is
+              touching
+            </li>
+          </ul>
+
+          If you want to see the code for this algorithm, press F12, because
+          here's a demonstration!
+        </section>
+      </section>
+      <div class="canvas" id="canvas"></div>
+    </article>
+  </body>
+</html>
