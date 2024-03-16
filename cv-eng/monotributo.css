@@ -6,7 +6,7 @@
 
 html {
     padding: 32px;
-    --padding-default: 0.5rem;
+    --padding-default: 0.4rem;
 }
 
 body {
@@ -30,7 +30,7 @@ h5 {
 
 h1 {
     outline: 2px solid black;
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-align: center;
 }
 
@@ -57,7 +57,7 @@ header>*:not(:first-child) {
 }
 
 header>address {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 header>h2 {
@@ -70,11 +70,11 @@ header>address::before {
 }
 
 header>address:nth-child(3)::before {
-    content: "Pronombres:  ";
+    content: "Pronouns:  ";
 }
 
 header>address:nth-child(4)::before {
-    content: "Correo electrónico:  ";
+    content: "E-mail:  ";
 }
 
 body>section {
@@ -101,7 +101,7 @@ body > :nth-child(7) {
 .professional-profile>:not(:last-child),
 .professional-profile>section,
 .professional-profile>section>h4 {
-    margin-bottom: 1rem;
+    margin-bottom: 0.4rem;
 }
 
 ol,
