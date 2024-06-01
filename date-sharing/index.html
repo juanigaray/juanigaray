@@ -1,65 +1,50 @@
 <!DOCTYPE html>
 <html lang="es-AR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="theme-color" content="#e9d6ee" />
-    <link rel="icon" type="image/png" href="../favicon.ico" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Date sharing</title>
-  </head>
 
-  <body>
-    <section class="shared-date">
-      <h1 id="parsed-url-date-title"></h1>
-      <p id="parsed-url-date"></p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="theme-color" content="#e9d6ee" />
+  <link rel="icon" type="image/png" href="../favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <title>Date sharing</title>
+</head>
+
+<body>
+  <section class="shared-date">
+    <h3 id="parsed-url-date-title"></h3>
+    <p id="parsed-url-date"></p>
+  </section>
+  <section class="date-selection">
+    <!-- Form to allow input on enter -->
+    <section>
+      <h2>Want to share a date and time?</h2>
+      <p>This will take you to a new page you can send to other people</p>
+      <form class="date-form">
+        <input type="datetime-local" id="date-input" />
+        <button id="select-date-button">GENERATE URL</button>
+      </form>
     </section>
-    <section class="date-selection">
-      <h1>How to use this page-app</h1>
-      <p>
-        Ever want to share a date with someone else who's in a different
-        timezone? Oh, let's meet friday at, uh, 10 PM GMT! That is
-        <strong> very annoying</strong>.
+    <details class="tutorial">
+      <summary>Lost on what this page does?</summary>
+      <p> Ever want to set a time and date for an activity with someone else who's in a different timezone? <em>Oh,
+          let's meet friday at, uh, 10 PM GMT!</em>
+
+        It's kind of annoying, especially with names like "EST" which you never know what GMT values they have.
       </p>
       <p>
-        There are tools to solve this out there but they tend to do too many
-        things and they're uglier than this website.
-      </p>
-      <p>
-        This page does one thing. It asks for a date in YOUR timezone and gives
-        you a URL that you can send to people. When someone enters that URL,
+        There are tools out there to help you solve this but they tend to do too many
+        things. This page does one thing. It asks for a date in YOUR timezone and redirects
+        you to a URL that you can send to people. When someone enters that URL,
         this page will detect where their browser is and show them the date
         converted to that timezone.
       </p>
-      <!-- Form to allow input on enter -->
-      <section>
-        <h1>Enter the date you want to share</h1>
-        <form class="date-form">
-          <input type="datetime-local" id="date-input" />
-          <button id="select-date-button">GENERATE DATE URL</button>
-        </form>
-      </section>
-    </section>
-    <details class="description">
-      <summary>STOP DOING TIMEZONE CONVERSIONS</summary>
-      <ul>
-        <li>HOURS WERE NOT SUPPOSED TO BE GIVEN DISTANCES</li>
-        <li>YEARS COUNTING TIME yet NO REAL-WORLD USE FOUND for UTC OFFSETS</li>
-        <li>
-          Wanted to know what time it was in another city anyway for a laugh? We
-          had a tool for that: it was called "TRAVELLING"
-        </li>
-        <li>
-          "Remember to subtract the <b>daylight savings</b>. Let's meet at 18:30
-          <b>GMT-03</b>" - Statements dreamed up by the utterly Deranged
-        </li>
-      </ul>
-      <b>They have played us for absolute fools.</b>
     </details>
-    <script type="text/javascript" src="./index.js"></script>
-  </body>
+  </section>
+
+  <script type="text/javascript" src="./index.js"></script>
+</body>
+
 </html>

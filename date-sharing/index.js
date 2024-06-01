@@ -1,7 +1,10 @@
+// @ts-check
+
 const DATE_ID = "date-input";
 const PARSED_DATE_ID = "parsed-url-date";
 const SELECT_DATE_BUTTON_ID = "select-date-button";
 const PARSED_DATE_TITLE_ID = "parsed-url-date-title";
+
 /**
  *
  * @param {string} url
@@ -34,14 +37,14 @@ const goToSelectedDateUrl = () => {
 };
 
 /**
- * @returns {Date | undefined}
+ * @returns {Date | null}
  */
 const parseUrlDate = () => {
   const urlParams = new URLSearchParams(window.location.search);
   const urlDate = urlParams.get("date");
-  if (urlDate === "" || urlDate === null) return undefined;
+  if (urlDate === "" || urlDate === null) return null;
   const urlDateNum = +urlDate;
-  if (isNaN(urlDateNum) || urlDateNum === 0) return undefined;
+  if (isNaN(urlDateNum) || urlDateNum === 0) return null;
   const date = new Date();
   date.setTime(urlDateNum);
   return date;
@@ -52,16 +55,17 @@ const parseUrlDate = () => {
  */
 const setUrlDateParagraph = () => {
   const parsedUrlDate = parseUrlDate();
-  if (parsedUrlDate) {
+  if (parsedUrlDate !== null) {
     const pElement = document.getElementById(PARSED_DATE_ID);
     if (pElement) pElement.innerText = parsedUrlDate.toString();
     const hElement = document.getElementById(PARSED_DATE_TITLE_ID);
-    if (hElement) hElement.innerText = "The date in question is:";
+    if (hElement) hElement.innerText = "The selected date is:";
   }
 };
 
 // Main
 setUrlDateParagraph();
+
 // @ts-ignore
 document.getElementById(SELECT_DATE_BUTTON_ID).addEventListener(
   "click",
