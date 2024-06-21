@@ -1,6 +1,7 @@
 // @ts-check
 
 const DATE_ID = "date-input";
+const SHARED_DATE_CONTAINER_ID = "shared-date-container";
 const PARSED_DATE_ID = "parsed-url-date";
 const SELECT_DATE_BUTTON_ID = "select-date-button";
 const PARSED_DATE_TITLE_ID = "parsed-url-date-title";
@@ -56,6 +57,8 @@ const parseUrlDate = () => {
 const setUrlDateParagraph = () => {
   const parsedUrlDate = parseUrlDate();
   if (parsedUrlDate !== null) {
+    const containerElement = document.getElementById(SHARED_DATE_CONTAINER_ID);
+    if(containerElement) containerElement.style.display = "flex";
     const pElement = document.getElementById(PARSED_DATE_ID);
     if (pElement) pElement.innerText = parsedUrlDate.toString();
     const hElement = document.getElementById(PARSED_DATE_TITLE_ID);

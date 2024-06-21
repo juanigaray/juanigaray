@@ -61,7 +61,8 @@ body {
 }
 
 .shared-date {
-  display: flex;
+  /* changed to "flex" in js */
+  display: none; 
   flex-direction: column;
   align-items: center;
   color: var(--whitish);
