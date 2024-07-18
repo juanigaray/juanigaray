@@ -1,0 +1,91 @@
+/* @page {
+  size: A4 portrait;
+  margin: 0;
+}
+ */
+
+* {
+    box-sizing: border-box;
+    --red: red;
+    --blue: blue;
+    --yellow: yellow;
+    --black: black;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header .email::before {
+    content: "E-mail:  ";
+}
+
+header .github::before {
+    content: "Github:  ";
+}
+
+header .gh-page::before {
+    content: "Github page:  ";
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.5rem;
+    gap: 2rem;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    margin: 0.3rem 0;
+}
+
+.profile-and-work-xp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.professional-profile {
+    min-width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.profile-and-work-xp h3,
+.profile-and-work-xp h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.profile-and-work-xp p,
+.profile-and-work-xp ul,
+.profile-and-work-xp li {
+    margin: 0.5rem 0;
+}
+
+.profile-and-work-xp ul {
+    padding-inline-start: 0;
+    list-style: none;
+}
+
+.oss-work ul {
+    margin: 0;
+    padding-inline-start: 0;
+    list-style: none;
+}
+
+
+.work-experience ol {
+    margin: 0;
+    padding-inline-start: 0;
+    list-style: none;
+}
+
+.work-experience li {
+    margin: 0.5rem 0;
+}
